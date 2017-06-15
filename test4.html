@@ -24,9 +24,8 @@
             n-cockpit-parent>
         </a-entity>
         <a-entity 
-            position="0 -0.1 0" 
-            width="0.04" height="0.01"
             geometry="primitive: plane" material="color: gray"
+	  		position="0 -0.1 0" width="0.04" height="0.01"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
             wire="on: click; emit: browser; targets: #browser, #dialog">
             <a-entity
@@ -43,10 +42,8 @@
             wire="on: click; emit: cockpit; targets: #dialog">
 	  	</a-entity>
   	</a-entity>
-    <a-entity id="browser"
-        position="0 -0.35 0" 
-        n-cockpit-parent altspace-cursor-collider="enabled: true"
-        n-layout-browser="url: http://altvr.com">
+    <a-entity id="browser" position="0 -0.35 0" n-cockpit-parent>
+			<a-entity n-layout-browser="url: http://altvr.com"></a-entity>
             <a-animation attribute="scale" begin="browser" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
             <a-animation attribute="scale" begin="browserclose" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
         <a-entity 
