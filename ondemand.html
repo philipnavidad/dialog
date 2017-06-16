@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+<script src="navigate.js"></script>
+</head>
+<body>
+<a id="altlink" style="display: none;" href="altspace://account.altvr.com/api/spaces/campfire-lobby"></a>
+<a id="part1" style="display: none;" href="https://account.altvr.com/hosted_contents/702280434247008626/play?target_ids=702374705339826782"></a>
+<a id="part2" style="display: none;" href="https://account.altvr.com/hosted_contents/702293965885407545/play?target_ids=702374705339826782"></a>
+<a-scene altspace="fullspace: true">
+    <a-assets>
+        <img id="close" src="icon-close.png">
+    </a-assets>
+    <a-entity id="dialog1" position="0 0.6 -1" n-cockpit-parent> 
+    	<a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="navigate" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-plane color="black" width="1" height="0.5" opacity="0.3" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-entity
+            n-text="fontSize: 2; text: Press PLAY to <br> start Part 1; horizontalAlign: middle"
+			position="0 0.1 0.1" scale="0.3 0.3 0.3"
+            n-cockpit-parent>
+        </a-entity>
+        <a-entity 
+            geometry="primitive: plane; width: 0.4; height: 0.1;" material="color: gray"
+	  		position="0 -0.1 0.01"
+            n-cockpit-parent altspace-cursor-collider="enabled: true"
+            wire="on: click; emit: navigate; targets: #dialog1"
+            navigate="link: #part1">
+            <a-entity
+                n-text="fontSize: 2; text: PLAY; horizontalAlign: middle"
+			    position="0 0 0.02" scale="0.3 0.3 0.3"
+                n-cockpit-parent>
+            </a-entity>    
+	  	</a-entity>
+        <a-entity 
+            position="0 -0.35 0" 
+            scale="0.05 0.05 0.05" 
+            geometry="primitive: circle" material="transparent: true; src: #close"
+            n-cockpit-parent altspace-cursor-collider="enabled: true"
+            wire="on: click; emit: cockpit; targets: #dialog">
+	  	</a-entity>
+  	</a-entity>
+    
+    <a-entity id="dialog2" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent> 
+    	<a-animation attribute="scale" delay="301000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="navigate" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-plane color="black" width="1" height="0.5" opacity="0.3" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-entity
+            n-text="fontSize: 2; text: Press PLAY to <br> start Part 2; horizontalAlign: middle"
+			position="0 0.1 0.1" scale="0.3 0.3 0.3"
+            n-cockpit-parent>
+        </a-entity>
+        <a-entity 
+            geometry="primitive: plane; width: 0.4; height: 0.1;" material="color: gray"
+	  		position="0 -0.1 0.01"
+            n-cockpit-parent altspace-cursor-collider="enabled: true"
+            wire="on: click; emit: navigate; targets: #dialog2"
+            navigate="link: #part1">
+            <a-entity
+                n-text="fontSize: 2; text: PLAY; horizontalAlign: middle"
+			    position="0 0 0.02" scale="0.3 0.3 0.3"
+                n-cockpit-parent>
+            </a-entity>    
+	  	</a-entity>
+        <a-entity 
+            position="0 -0.35 0" 
+            scale="0.05 0.05 0.05" 
+            geometry="primitive: circle" material="transparent: true; src: #close"
+            n-cockpit-parent altspace-cursor-collider="enabled: true"
+            wire="on: click; emit: cockpit; targets: #dialog">
+	  	</a-entity>
+  	</a-entity>
+</a-scene>
+</body>
+</html>
