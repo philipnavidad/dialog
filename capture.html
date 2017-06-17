@@ -14,8 +14,8 @@
         <img id="close" src="icon-close.png">
     </a-assets>
     <a-entity id="dialog1" position="0 0.6 -1" n-cockpit-parent> 
-    	<a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-        <a-animation attribute="scale" begin="navigate" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+    	<a-animation attribute="scale" begin="cockpit1" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="navigate1" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
         <a-plane color="black" width="1" height="0.5" opacity="0.3" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
         <a-entity
             n-text="fontSize: 2; text: Press PLAY to <br> start Part 1; horizontalAlign: middle"
@@ -26,7 +26,7 @@
             geometry="primitive: plane; width: 0.4; height: 0.1;" material="color: gray"
 	  		position="0 -0.1 0.01"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-            wire="on: click; emit: navigate; targets: #dialog1"
+            wire="on: click; emit: navigate1; targets: #dialog1"
             navigate="link: #part1">
             <a-entity
                 n-text="fontSize: 2; text: PLAY; horizontalAlign: middle"
@@ -39,14 +39,14 @@
             scale="0.05 0.05 0.05" 
             geometry="primitive: circle" material="transparent: true; src: #close"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-            wire="on: click; emit: cockpit; targets: #dialog">
+            wire="on: click; emit: cockpit1; targets: #dialog">
 	  	</a-entity>
   	</a-entity>
     
     <a-entity id="dialog2" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent> 
     	<a-animation attribute="scale" delay="301000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-        <a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-        <a-animation attribute="scale" begin="navigate" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="cockpit2" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" begin="navigate2" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
         <a-plane color="black" width="1" height="0.5" opacity="0.3" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
         <a-entity
             n-text="fontSize: 2; text: Press PLAY to <br> start Part 2; horizontalAlign: middle"
@@ -57,7 +57,7 @@
             geometry="primitive: plane; width: 0.4; height: 0.1;" material="color: gray"
 	  		position="0 -0.1 0.01"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-            wire="on: click; emit: navigate; targets: #dialog2"
+            wire="on: click; emit: navigate2; targets: #dialog2"
             navigate="link: #part1">
             <a-entity
                 n-text="fontSize: 2; text: PLAY; horizontalAlign: middle"
@@ -70,7 +70,7 @@
             scale="0.05 0.05 0.05" 
             geometry="primitive: circle" material="transparent: true; src: #close"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-            wire="on: click; emit: cockpit; targets: #dialog">
+            wire="on: click; emit: cockpit2; targets: #dialog">
 	  	</a-entity>
   	</a-entity>
 </a-scene>
